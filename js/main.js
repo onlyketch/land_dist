@@ -43,26 +43,24 @@ $(document).ready(function() {
       groupAttr: false,
    });
 
+   let hambButton = document.getElementById('burg');
+   let sideMenu = document.querySelector('.sideMenu');
+   let closeButton = document.querySelector('.sideMenu__close');
+   let sideMenuLink = document.querySelectorAll('.sideMenu__link');
 
-    let burg = document.getElementById('burg');
-    let hiddenMenu = document.querySelector('.hidden');
-    let hiddenNav = document.querySelectorAll('.hidden__nav');
-
-    burg.addEventListener('click', function() {
-      hiddenNav.forEach(function(e) {
-        e.classList.toggle('opacity');
-      });
-      hiddenMenu.classList.toggle('hidden-visible');
+   sideMenuLink.forEach(function(e) {
+    e.addEventListener('click', function() {
+      sideMenu.classList.toggle('__visible');
     });
+   })
 
-    hiddenNav.forEach(function(e) {
-      e.addEventListener('click', function() {
-        hiddenNav.forEach(function(e) {
-          e.classList.toggle('opacity');
-        });
-        hiddenMenu.classList.toggle('hidden-visible');
-      });
-    });
+   hambButton.addEventListener('click', function() {
+    sideMenu.classList.toggle('__visible');
+   });
+
+   closeButton.addEventListener('click', function() {
+    sideMenu.classList.toggle('__visible');
+   });
 
 
     
